@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <base href="https://github.com/WindyZY" target="_top">
+    <title>MyReader</title>
+</head>
+<body style="background-color:burlywood;">
+    <h1>Just for comfortable reading</h1>
+    <h2><i>let's try!</i></h2>
+    <br/>
+    <p><em>Go Fighting!</em>
+        <a href="https://github.com" target="_blank" style="text-decoration: none">
+            <img src="1.jpg" alt="something" width="250" height="240" ></a>
+    </p>
+    <img src="2.jpg" width="144" height="126" alt="something" usemap="#heihei">
+    <map name="heihei">
+        <area shape="rect" coords="0,0,48,42" alt="cool" href="https://github.com/WindyZY">
+    </map>
+
+    <form action="MAILTO:someoneAexmaple.com" method="post" entype="text/plain">
+        <fieldset>
+            <legend>Personal information</legend>
+         <h1>Information!!!</h1>
+        First name: <input type="text" name="firstname"><br>
+        Last name: <input type="text" name="lastname"><br>
+        Username: <input type="text" name="user"><input type="submit" value="submit"><br>
+        Passerword: <input type="password" name="pasword"><input type="submit" value="ensure the password"><input type="rest" value="reset"><br>
+        Again:<input type="password" name="ensure">
+        <p>
+            <em>choose your sex</em>
+        </p>
+        <input type="radio" name="sex" value="male">Male<br>
+        <input type="radio" name="sex" value="female">Female<br>
+        <input type="checkbox" name="vehicle" value="By bike">bike<br>
+        <input type="checkbox" name="vehicle" value="On foot">foot<br>
+        
+        <select name="Age">
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17" selected>17</option>
+            <option value="18">18</option>
+        </select>
+
+        <textarea rows="10" cols="30">
+            textarea
+        </textarea>
+        <input type="button" value="Hello World!">   
+        </fieldset>
+        
+    </form>
+    
+    <script>
+    document.write("Hello world!")
+    </script>
+    <noscript>抱歉，你的浏览器不支持JS!</noscript>
+    
+    <address><small>
+        Written by <a href="https://github.com/WindyZY" target="_blank" style="text-decoration: none">WindyZY</a><br>
+        Visit us at:<br>
+        Example.com<br>
+        Box 564, Disneyland<br>
+        China</small>
+    </address>
+</body>
+</html>
