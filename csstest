@@ -105,7 +105,7 @@
                     float:left;
                     padding:15px;    
                 }
-                div.content {margin-left: 0;}
+                /*div.content {margin-left: 0;}*/
             }
 
             @media screen and (max-width:750px)
@@ -128,30 +128,38 @@
     </head>
 
     <body>
-        <ul class="sidenav">
-            <li><a class="active" href="#home">主页</a></li>
-            <li><a href="#news">新闻</a></li>
-            <li><a href="#mine">我的</a></li>
-            <li class="right"><a href="#about">关于我们</a></li>
-        </ul>
-
         <div class="header">
             <h1>MyReader随心所欲的阅读器</h1>
             <p>马上体验！</p>
         </div>
         
-            <div class="row">
-                <div class="side">
-                    <h2>最近使用：</h2>
-                    <h5>文件1</h5>
-                    <h5>文件2</h5>
-                    <div class="picture" style="height: 50px;">这里跳到文件库</div>
-                </div>
-                <div class="main">
-                    <h2>标题</h2>
-                </div>
-            </div>
-        
+        <div>
+            <ul class="sidenav">
+                    <li><a class="active" href="#home">主页</a></li>
+                    <li><a href="#news">新闻</a></li>
+                    <li><a href="#mine">我的</a></li>
+                    <li class="right"><a href="#about">关于我们</a></li>
+            </ul>
+        </div>
 
+        <div class="row">
+            <div class="side">
+                <h2>最近使用：</h2>
+                <h5>文件1</h5>
+                <h5>文件2</h5>
+                <div class="picture" style="height: 50px;">这里跳到文件库</div>
+            </div>
+            <div class="main">
+                <h2>标题</h2>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <address><small>
+                Written by <a href="https://github.com/WindyZY" target="_blank" style="text-decoration: none">WindyZY</a>
+                Visit us at:<br>
+                </small>
+            </address>
+        </div>
     </body>
 </html>
