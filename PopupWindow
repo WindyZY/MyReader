@@ -1,4 +1,5 @@
-<!--点开按钮，弹出一个小窗，或许之后可以做成sticky的小框，用来显示文本。待完善-->
+<!--这是尝试做的弹窗（待完善）可用于输入需要操作的文本，open按钮用于测试，需要可改-->
+<!--sticky的文本区域用于测试。可用于显示需要放入的文本。改变z-index可选择是否高于弹窗-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,7 +19,7 @@
      } 
      .white_content{
          display:none;
-         position:absolute;
+         position: absolute;
          top:35%; left:30%;
          width:40%; height:30%;
          border:5px outset lightblue; border-radius: 10px;
@@ -32,6 +33,10 @@
      } 
      button:hover{
          background-color: rgb(255, 255, 255);
+     }
+     .stickyBox{
+         position:sticky;
+         <!--z-index:1020;改变这个参数可以选择高于弹窗显示-->
      }
     </style>
 
@@ -53,6 +58,9 @@
 </head>
 <body>
     <button id="openWindow" onclick="showDiv('MyDiv','fade')" ref="button">Open</button>
+    <div class="stickyBox">
+        <textarea cols="40" rows="40" name="test" id="translateAns">aaaaaaa</textarea>
+    </div>
     <div id="fade" class="black_overlay"></div>
     <div id="MyDiv" class="white_content">
         <div style="text-align:right; cursor:default; height:10px;">
