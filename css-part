@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CSStest</title>
+<style>
+body 
+{
+    background-color:#FAFAD2;
+    background-image: url('1.jpg');
+    background-repeat: repeat-y;
+    background-attachment: fixed;
+    background-position: right top;
+    /*简写属性值顺序：background-color、background-image、background-repeat、background-attachment、background-position
+    body{background:#FAFAD2 url('1.jpg') repeat-y fixed right top;}
+    */
+}
+h1   
+{
+    color:maroon;
+    font-size:36pt;
+    text-align:center;
+    text-shadow: 2px 2px 3px #FF0000;/*h-shadow v-shadow (blur color)*/
+}
+h2   {color:blue;font-size:20pt;text-align:center;}
+hr   {color:navy;}
+p    {background-color: rgb(226, 203, 146);font-family:Arial, Helvetica, sans-serif;font-size:15pt;margin-left:20px;}
+/*带id的p*/
+#para1  {text-align:center;color:rgb(194, 163, 41);}
+#para2  {font:italic bold 12px/30px Georgia,serif;}
+/*一句声明字体的属性（不全）*/
+a:link      {color:green;}
+a:visited   {color:yellow;}
+a:hover     {color:black;}
+a:active    {color:blue;}
+/*链接的状态还可以用text-decoration、font-size、font-family、background-color等*/
+
+/*class*/
+.center/*类的声明*/
+{
+    text-align:center;
+}
+p.right
+{
+    text-align: right;
+}
+p.main
+{
+    text-align:justify;
+    text-decoration: line-through;/*下划线是underline 上划线是over line*/
+    text-indent: 50px;/*缩进*/
+}
+/*使用style标签在head里定义内部样式，外部样式用link*/
+
+p.uppercase {text-transform: uppercase;letter-spacing: 2px;}
+p.lowercase {text-transform: lowercase;letter-spacing:-3px;}
+p.capitalize    {text-transform: capitalize;word-spacing: 30px;line-height: 70%;white-space: pre-wrap;}
+
+p.italic{font-style:italic;}
+</style>
+</head>
+
+<body>
+
+<h1>这是标题！h1 颜色是marron 字体大小是36pt</h1>
+<hr> 
+<h2>这是副标题！h2 颜色是blue 字体大小是20pt</h2>
+
+<p>这个段落的左外边距为 20 像素：20px</p> 
+<p><a href="https://github.com" target="_blank">这是一个链接</a></p>
+<p id="para1">Hello World!</p>
+<p id="para2">Hello World! Hello World! Hello World!</p>
+<h2 class="center">h2居中</h2>
+<p class="center">p居中</p>
+<h2 class="right">h2不受影响</h2>
+<p class="right">p向右对齐</p>
+<p class="main">两端对齐两端对齐两端对齐两端对齐两端对齐 删除线删除线删除线删除线删除线</p>
+
+<p class="uppercase">This is some text.</p>
+<p class="lowercase">This is some text.</p>
+<p class="capitalize">
+    This is some text.
+    This is some text.
+</p>
+
+<p class="italic">This is some text.</p>
+
+</body>
+</html>

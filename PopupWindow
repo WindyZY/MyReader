@@ -1,0 +1,82 @@
+<!--这是尝试做的弹窗（待完善）可用于输入需要操作的文本，open按钮用于测试，需要可改-->
+<!--sticky的文本区域用于测试。可用于显示需要放入的文本。改变z-index可选择是否高于弹窗-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>POPUPWINDOW</title>
+    <script src="jquery" type="text/javascript"></script>
+
+    <style>
+     .black_overlay{
+         display:none;
+         position:absolute;
+         top:0%; left:0%;
+         width:100%; height:100%;
+         background-color: black;
+         z-index:10;
+         opacity:0.8;
+         filter:alpha(opacity=80);
+     } 
+     .white_content{
+         display:none;
+         position: absolute;
+         top:35%; left:30%;
+         width:40%; height:30%;
+         border:5px outset lightblue; border-radius: 10px;
+         background-color:whitesmoke;
+         z-index:12;
+         overflow: auto;
+     } 
+     button{
+        border:1px solid rgb(200, 200, 200);
+        border-radius:8px;
+     } 
+     button:hover{
+         background-color: rgb(255, 255, 255);
+     }
+     .stickyBox{
+         position:sticky;
+         <!--z-index:12;改变这个参数可以选择高于弹窗显示-->
+     }
+    </style>
+
+    <script type="text/javascript">
+    //Show the pop-up window
+    function showDiv(show_div,bg_div){
+        document.getElementById(show_div).style.display='block';
+        document.getElementById(bg_div).style.display='block';
+        var bgdiv=document.getElementById(bg_div);
+        bgdiv.style.width=document.body.scrollWidth;
+        $("#"+bg_div).height($(document).height());
+    };
+    //Close the window
+    function closeDiv(show_div,bg_div){
+        document.getElementById(show_div).style.display='none';
+        document.getElementById(bg_div).style.display='none';
+    };
+    </script>
+</head>
+<body>
+    <button id="openWindow" onclick="showDiv('MyDiv','fade')" ref="button">Open</button>
+    <div class="stickyBox">
+        <textarea cols="40" rows="40" name="test" id="translateAns">aaaaaaa</textarea>
+    </div>
+    <div id="fade" class="black_overlay"></div>
+    <div id="MyDiv" class="white_content">
+        <div style="text-align:right; cursor:default; height:10px;">
+        <span style="color:red; font-size:16px; font-size:30px;" onclick="closeDiv('MyDiv','fade')">X</span>
+        </div>
+        <div>
+            <span>                   <br>                         </span>
+        </div>
+        <div>
+            <p style="text-align: center;font-family:Arial, Helvetica, sans-serif;font-size:24px;">Please Enter the words you want to highlight:</p>
+        <div style="text-align: center;">
+            <textarea cols="30" rows="3" name="textarea" id="HLwords"></textarea>
+            <br><br>
+            <button id="sure" onclick="" ref="button">Sure</button>
+            <button id="cancel" onclick="closeDiv('MyDiv','fade')" ref="button">Cancel</button>   
+        </div>
+    </div>
+</body>
+</html>
