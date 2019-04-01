@@ -1,13 +1,14 @@
 <!--这里是为了做个功能框。当用户选中某块时，hover显示功能框，选择需要的功能-->
 <!--同时尝试做一个放置翻译结果的sticky小框-->
+<!--html事件onmouseup-->
 <!DOCTYPE html>
 <html>
     <head>
         <title>FunctionBox</title>
         <style>
             .dropbtn{
-                background-color:rgb(250, 204, 211);
-                color: lightcoral;
+                background-color:#4CAF50;
+                color:white;
                 padding: 16px;
                 font-size: 16px;
                 border: none;
@@ -24,14 +25,15 @@
                 min-width: 160px;
                 box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             }
-            .dropdown-content a{
-                color:black;
-                padding:12px 16px;
-                text-decoration: none;
+            .dropdown-content input{
+                border:none;
+                width:100%; 
+                height: 30px;
+                text-align: center;
                 display:block;
             }
-            .dropdown-content a:hover{
-                background-color:#f1f1f1;
+            .dropdown-content input:hover{
+                background-color:#d4d0d0;
             }
             .dropdown:hover .dropdown-content{
                 display:block;
@@ -45,10 +47,10 @@
         <div class="dropdown">
             <button class="dropbtn">下拉菜单</button>
             <div class="dropdown-content">
-                <a href="#translate">translate</a>
-                <a href="#highlight">highlight</a>
-                <a href="keyinformation">keyinfo</a>
-                <a href="explain">explain</a>
+                <input type="button" value="translate" onclick="translate()">
+                <input type="button" value="highlight" onclick="highlight()">
+                <input type="button" value="explain" onclick="explain()">
+                <input type="button" value="summarize" onclick="summarize()">
             </div>
         </div>
     </body>
