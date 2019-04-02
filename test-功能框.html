@@ -42,16 +42,6 @@
             .dropdown:hover .dropbtn{
                 background-color: #3e8e41;
             }
-            #translateAns{
-                position:absolute;
-                visibility: hidden;
-                overflow: hidden;
-                border:1px solid #CCC;
-                background-color: #F9F9F9;
-                border:1px solid #333;
-                padding:5px;
-                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            }
         </style>
         <script>
             function showOptions(){
@@ -80,14 +70,14 @@
             Yet the models, theory, and algorithms associated with a compiler can be applied to a wide range of 
             problems in software design and software development. We therefore emphasize problems that are most 
             commonly encountered in designing a language processor, regardless of the source language or target machine. </p>
-        <div class="dropdown">
-            <button class="dropbtn">下拉菜单</button>
+        <!--<div class="dropdown">-->
+            <!--<button class="dropbtn">下拉菜单</button>-->
             <div class="dropdown-content" id="options">
                 <input type="button" id="translate" value="translate" onclick="translate()">
                 <input type="button" value="highlight" onclick="highlight()">
                 <input type="button" value="explain" onclick="explain()">
                 <input type="button" value="summarize" onclick="summarize()">
             </div>
-        </div>
+        <!--</div>-->
     </body>
 </html>
