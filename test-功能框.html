@@ -47,10 +47,13 @@
                 background: rgb(215, 236, 243);
                 font:15px arial,san-serif;
                 width:250px;height:400px;
-                overflow: auto;
+                text-align: center;
                 position:sticky;
                 display:none;
                 box-shadow:0px 8px 16px 0px rgba(0,0,0,0.2);
+            }
+            #floatingWin span:hover{
+                background-color: rgb(184, 235, 252);
             }
         </style>
         <script>
@@ -64,6 +67,10 @@
             }
             function hide(mydiv){
                 document.getElementById(mydiv).style.display="none";
+            }
+            function clearDiv(){
+                document.getElementById("floatingWin").style.display="none";
+                document.getElementById("translateAns").textContent="";
             }
             function translate(){
                 document.getElementById("floatingWin").style.display="block";
@@ -93,11 +100,12 @@
             </div>
         <!--</div>-->
         <div id="floatingWin">
-            <div style="text-align:right; cursor:default; height:10px;">
-                <span style="color:red; font-size:16px; font-size:30px;" onclick="hide('floatingWin')">X</span>
+            <div style="text-align:right; cursor:default; height:3px;">
+                <span style="color:black; font-size:20px;" onclick="clearDiv()">M</span>
+                <span style="color:red; font-size:20px;" onclick="hide('floatingWin')">X</span>
             </div>
             <div><br></div>
-            <textarea cols="34" rows="24" name="translateAns" id="translateAns"></textarea>
+            <textarea style="overflow: auto;" cols="32" rows="24" name="translateAns" id="translateAns"></textarea>
         </div>
 
     </body>
