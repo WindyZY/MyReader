@@ -42,6 +42,16 @@
             .dropdown:hover .dropbtn{
                 background-color: #3e8e41;
             }
+            #floatingWin{
+                border:2px solid beige;
+                background: rgb(215, 236, 243);
+                font:15px arial,san-serif;
+                width:250px;height:400px;
+                overflow: auto;
+                position:sticky;
+                display:none;
+                box-shadow:0px 8px 16px 0px rgba(0,0,0,0.2);
+            }
         </style>
         <script>
             function showOptions(){
@@ -52,13 +62,16 @@
                 x.style.position="absolute";
                 document.body.appendChild(x);
             }
-            function hideOptions(){
-                document.getElementById("options").style.display="none";
+            function hide(mydiv){
+                document.getElementById(mydiv).style.display="none";
+            }
+            function translate(){
+                document.getElementById("floatingWin").style.display="block";
             }
         </script>
     </head>
     <body>
-        <p oncontextmenu="showOptions()" onclick="hideOptions()">
+        <p oncontextmenu="showOptions()" onclick="hide('options')">
             In the time since the 1986 edition of this book, the world of compiler design has changed significantly.
             Programming languages have evolved to present new compilation problems. Computer architectures offer 
             a variety of resources of which the compiler designer must take advantage. Perhaps most interestingly, 
@@ -73,11 +86,19 @@
         <!--<div class="dropdown">-->
             <!--<button class="dropbtn">下拉菜单</button>-->
             <div class="dropdown-content" id="options">
-                <input type="button" id="translate" value="translate" onclick="translate()">
+                <input type="button" value="translate" onclick="translate()">
                 <input type="button" value="highlight" onclick="highlight()">
                 <input type="button" value="explain" onclick="explain()">
                 <input type="button" value="summarize" onclick="summarize()">
             </div>
         <!--</div>-->
+        <div id="floatingWin">
+            <div style="text-align:right; cursor:default; height:10px;">
+                <span style="color:red; font-size:16px; font-size:30px;" onclick="hide('floatingWin')">X</span>
+            </div>
+            <div><br></div>
+            <textarea cols="34" rows="24" name="translateAns" id="translateAns"></textarea>
+        </div>
+
     </body>
 </html>
