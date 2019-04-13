@@ -1,0 +1,120 @@
+<!--尝试用段落文字来做出高亮的功能-->
+<!DOCTYPE html>
+<html>
+    <head>
+       <title>HIGHLIGHT</title>
+       <style>
+           HLtxt{
+               background:plum;
+           }
+       </style> 
+
+       <script type="text/javascript">
+        function highlight(){
+            var txt=window.getSelection().toString();
+            if(txt.length!=0){
+                var divstr=document.getElementById("textForTest").innerHTML;
+                divstr=divstr.replace(txt,'<HLtxt>'+txt+'</HLtxt>');
+                document.getElementById("textForTest").innerHTML=divstr;
+            }
+            
+        }
+       </script>
+    </head>
+
+    <body>
+        <div id="textForTest">
+            <p onmouseup="highlight()" style="font-size: 24px;">
+                In the time since the 1986 edition of this book, the world of compiler design has changed significantly.
+                Programming languages have evolved to present new compilation problems. Computer architectures offer 
+                a variety of resources of which the compiler designer must take advantage. Perhaps most interestingly, 
+                the venerable technology of code optimization has found use outside compilers. It is now used in tools
+                that find bugs in software, and most importantly, find security holes in existing code. And much of 
+                the "front-end" technology grammars, regular expressions, parsers, and syntax-directed translators - 
+                are still in wide use. Thus, our philosophy from previous versions of the book has not changed. We 
+                recognize that few readers will build, or even maintain, a compiler for a major programming language. 
+                Yet the models, theory, and algorithms associated with a compiler can be applied to a wide range of 
+                problems in software design and software development. We therefore emphasize problems that are most 
+                commonly encountered in designing a language processor, regardless of the source language or target machine. 
+                In the time since the 1986 edition of this book, the world of compiler design has changed significantly.
+                Programming languages have evolved to present new compilation problems. Computer architectures offer 
+                a variety of resources of which the compiler designer must take advantage. Perhaps most interestingly, 
+                the venerable technology of code optimization has found use outside compilers. It is now used in tools
+                that find bugs in software, and most importantly, find security holes in existing code. And much of 
+                the "front-end" technology grammars, regular expressions, parsers, and syntax-directed translators - 
+                are still in wide use. Thus, our philosophy from previous versions of the book has not changed. We 
+                recognize that few readers will build, or even maintain, a compiler for a major programming language. 
+                Yet the models, theory, and algorithms associated with a compiler can be applied to a wide range of 
+                problems in software design and software development. We therefore emphasize problems that are most 
+                commonly encountered in designing a language processor, regardless of the source language or target machine.
+                In the time since the 1986 edition of this book, the world of compiler design has changed significantly.
+                Programming languages have evolved to present new compilation problems. Computer architectures offer 
+                a variety of resources of which the compiler designer must take advantage. Perhaps most interestingly, 
+                the venerable technology of code optimization has found use outside compilers. It is now used in tools
+                that find bugs in software, and most importantly, find security holes in existing code. And much of 
+                the "front-end" technology grammars, regular expressions, parsers, and syntax-directed translators - 
+                are still in wide use. Thus, our philosophy from previous versions of the book has not changed. We 
+                recognize that few readers will build, or even maintain, a compiler for a major programming language. 
+                Yet the models, theory, and algorithms associated with a compiler can be applied to a wide range of 
+                problems in software design and software development. We therefore emphasize problems that are most 
+                commonly encountered in designing a language processor, regardless of the source language or target machine. 
+                In the time since the 1986 edition of this book, the world of compiler design has changed significantly.
+                Programming languages have evolved to present new compilation problems. Computer architectures offer 
+                a variety of resources of which the compiler designer must take advantage. Perhaps most interestingly, 
+                the venerable technology of code optimization has found use outside compilers. It is now used in tools
+                that find bugs in software, and most importantly, find security holes in existing code. And much of 
+                the "front-end" technology grammars, regular expressions, parsers, and syntax-directed translators - 
+                are still in wide use. Thus, our philosophy from previous versions of the book has not changed. We 
+                recognize that few readers will build, or even maintain, a compiler for a major programming language. 
+                Yet the models, theory, and algorithms associated with a compiler can be applied to a wide range of 
+                problems in software design and software development. We therefore emphasize problems that are most 
+                commonly encountered in designing a language processor, regardless of the source language or target machine.
+                In the time since the 1986 edition of this book, the world of compiler design has changed significantly.
+                Programming languages have evolved to present new compilation problems. Computer architectures offer 
+                a variety of resources of which the compiler designer must take advantage. Perhaps most interestingly, 
+                the venerable technology of code optimization has found use outside compilers. It is now used in tools
+                that find bugs in software, and most importantly, find security holes in existing code. And much of 
+                the "front-end" technology grammars, regular expressions, parsers, and syntax-directed translators - 
+                are still in wide use. Thus, our philosophy from previous versions of the book has not changed. We 
+                recognize that few readers will build, or even maintain, a compiler for a major programming language. 
+                Yet the models, theory, and algorithms associated with a compiler can be applied to a wide range of 
+                problems in software design and software development. We therefore emphasize problems that are most 
+                commonly encountered in designing a language processor, regardless of the source language or target machine. 
+                In the time since the 1986 edition of this book, the world of compiler design has changed significantly.
+                Programming languages have evolved to present new compilation problems. Computer architectures offer 
+                a variety of resources of which the compiler designer must take advantage. Perhaps most interestingly, 
+                the venerable technology of code optimization has found use outside compilers. It is now used in tools
+                that find bugs in software, and most importantly, find security holes in existing code. And much of 
+                the "front-end" technology grammars, regular expressions, parsers, and syntax-directed translators - 
+                are still in wide use. Thus, our philosophy from previous versions of the book has not changed. We 
+                recognize that few readers will build, or even maintain, a compiler for a major programming language. 
+                Yet the models, theory, and algorithms associated with a compiler can be applied to a wide range of 
+                problems in software design and software development. We therefore emphasize problems that are most 
+                commonly encountered in designing a language processor, regardless of the source language or target machine.
+                In the time since the 1986 edition of this book, the world of compiler design has changed significantly.
+                Programming languages have evolved to present new compilation problems. Computer architectures offer 
+                a variety of resources of which the compiler designer must take advantage. Perhaps most interestingly, 
+                the venerable technology of code optimization has found use outside compilers. It is now used in tools
+                that find bugs in software, and most importantly, find security holes in existing code. And much of 
+                the "front-end" technology grammars, regular expressions, parsers, and syntax-directed translators - 
+                are still in wide use. Thus, our philosophy from previous versions of the book has not changed. We 
+                recognize that few readers will build, or even maintain, a compiler for a major programming language. 
+                Yet the models, theory, and algorithms associated with a compiler can be applied to a wide range of 
+                problems in software design and software development. We therefore emphasize problems that are most 
+                commonly encountered in designing a language processor, regardless of the source language or target machine. 
+                In the time since the 1986 edition of this book, the world of compiler design has changed significantly.
+                Programming languages have evolved to present new compilation problems. Computer architectures offer 
+                a variety of resources of which the compiler designer must take advantage. Perhaps most interestingly, 
+                the venerable technology of code optimization has found use outside compilers. It is now used in tools
+                that find bugs in software, and most importantly, find security holes in existing code. And much of 
+                the "front-end" technology grammars, regular expressions, parsers, and syntax-directed translators - 
+                are still in wide use. Thus, our philosophy from previous versions of the book has not changed. We 
+                recognize that few readers will build, or even maintain, a compiler for a major programming language. 
+                Yet the models, theory, and algorithms associated with a compiler can be applied to a wide range of 
+                problems in software design and software development. We therefore emphasize problems that are most 
+                commonly encountered in designing a language processor, regardless of the source language or target machine.
+            </p>
+        </div>
+
+    </body>
+</html>
