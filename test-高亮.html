@@ -1,4 +1,6 @@
 <!--尝试用段落文字来做出高亮的功能-->
+<!--目前的问题：只标记最开始出现的词，不能全部标记。
+无法解决pdf形式的-->
 <!DOCTYPE html>
 <html>
     <head>
@@ -17,6 +19,8 @@
                 divstr=divstr.replace(txt,'<HLtxt>'+txt+'</HLtxt>');
                 document.getElementById("textForTest").innerHTML=divstr;
             }
+        }
+        function highlight2(){
             
         }
        </script>
