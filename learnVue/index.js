@@ -20,7 +20,7 @@ var app=new Vue({
             slogan:'github!!!'
         },
         strTest:'Hello World!!!',
-
+        count:1
     },
     filters:{
         capitalize:function(value){
@@ -39,4 +39,8 @@ var app=new Vue({
             this.message=this.message.split('').reverse().join('');
         },
     }
-})
+});
+
+app.$watch('count',function(nval,oval){
+    alert("change "+oval+" to "+nval+"!");
+});

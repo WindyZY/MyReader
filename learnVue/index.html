@@ -60,10 +60,14 @@
                     {{n}}
                 </li>
             </ol>
+
             <!--计算属性:该函数地返回值可以直接使用  setter&getter-->
             <p>Initial string: {{strTest}}</p>
             <p>Computed string: {{reverseMSG1}}</p>
             
+            <!--监听属性-->
+            <p style = "font-size:25px;">counter: {{ count }}</p>
+            <button @click = "count++" style = "font-size:25px;">click</button>
         </div>
 
         <script src="index.js"></script>
