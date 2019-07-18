@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <title>Simple Shopping Cart</title>
+    <head>
+        <link rel="stylesheet" href="demo.css">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+            <div id="shoppingCart">
+              <table>
+                <caption>Simple Shopping Cart</caption>
+                <tr>
+                  <th>Number</th>
+                  <th>Item</th>
+                  <th>Unit Price</th>
+                  <th>Count</th>
+                  <th>Price</th>
+                  <th>Option</th>
+                </tr>
+                <tr v-for="item in items">
+                  <td>{{item.no}}</td>
+                  <td>{{item.name}}</td>
+                  <td>{{item.pri}}</td>
+                  <td>
+                    <button v-bind:disabled="item.cnt===0"@click="item.cnt--;">-</button>
+                    <input type="text" style="width:20px; text-align:center" v-model="item.cnt">
+                    <button v-on:click="item.cnt++;">+</button>
+                  </td>
+                  <td>{{item.pri*item.cnt}}</td>
+                  <td>
+                    <button @click="item.cnt=0;">Delete</button>
+                  </td>
+                </tr>
+              </table>
+              Total Cost:${{totalCost()}}
+            </div>
+        <script src="demo.js"></script>
+    </body>
+</html>
