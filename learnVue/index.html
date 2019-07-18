@@ -67,7 +67,15 @@
             
             <!--监听属性-->
             <p style = "font-size:25px;">counter: {{ count }}</p>
-            <button @click = "count++" style = "font-size:25px;">click</button>
+            <button @click = "count++" style = "font-size:25px;">click</button><br>
+            <div>
+                kilometer:<input type="text" v-model="km">
+                meter:<input type="text" v-model="m">
+            </div>
+            
+            <!--用v-bind可以直接或间接地绑定元素额class、style等属性-->
+
+            <!---->
         </div>
 
         <script src="index.js"></script>

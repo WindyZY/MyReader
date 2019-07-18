@@ -20,7 +20,9 @@ var app=new Vue({
             slogan:'github!!!'
         },
         strTest:'Hello World!!!',
-        count:1
+        count:1,
+        km:0,
+        m:0,
     },
     filters:{
         capitalize:function(value){
@@ -38,6 +40,16 @@ var app=new Vue({
         reverseMSG:function(){
             this.message=this.message.split('').reverse().join('');
         },
+    },
+    watch:{
+        km:function(val){
+            this.km=val;
+            this.m=this.km*1000;
+        },
+        m:function(val){
+            this.km=val/1000;
+            this.m=val;
+        }
     }
 });
 
