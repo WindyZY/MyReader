@@ -78,8 +78,21 @@
             <!--事件监听可以用v-on指令,见监听属性部分
                 修饰符：.stop\.prevent\.capture\.self\.once
                 按键修饰符：<input v-on:keyup.enter="submit">enter键提交-->
-          
-            <!---->
+
+            <!--v-model绑定表单元素。也有修饰符.lazy在change事件中同步\.number自动转为number类型\.trim自动过滤输入的首尾空格-->
+            <p>AllSelected:</p><input type="checkbox" id="AllSelected" v-model="all" @change="changeAllSelected()">
+            <label for="checkbox">
+                {{all}}
+            </label>
+            <p>Options</p>
+            <input type="checkbox" id="A" value="A" v-model="selectedNames">
+            <label for="A">A</label>
+            <input type="checkbox" id="B" value="B" v-model="selectedNames">
+            <label for="B">B</label>
+            <input type="checkbox" id="C" value="C" v-model="selectedNames">
+            <label for="C">C</label>
+            <br>
+            <span>Name Seleted:{{selectedNames}}</span>
         </div>
 
         <script src="index.js"></script>

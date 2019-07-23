@@ -23,6 +23,9 @@ var app=new Vue({
         count:1,
         km:0,
         m:0,
+        all:false,
+        selectedNames:[],
+        selectedSources:['A','B','C']
     },
     filters:{
         capitalize:function(value){
@@ -40,6 +43,13 @@ var app=new Vue({
         reverseMSG:function(){
             this.message=this.message.split('').reverse().join('');
         },
+        changeAllSelected:function(){
+            if(this.all){
+                this.selectedNames=this.selectedSources;
+            }else{
+                this.selectedNames=[];
+            }
+        }
     },
     watch:{
         km:function(val){
@@ -49,6 +59,13 @@ var app=new Vue({
         m:function(val){
             this.km=val/1000;
             this.m=val;
+        },
+        "selectedNames":function(){
+            if(this.selectedNames.length==this.selectedSources.length){
+                this.all=true;
+            }else{
+                this.all=false;
+            }
         }
     }
 });
