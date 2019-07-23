@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <title>Simple Menu</title>
+    <head>
+        <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+        <style>
+            body{
+                font:15px/1.3 'Open Sans', sans-serif;
+                color:black;
+                text-align:center;
+                display: block;
+            }
+            a,a:visited{
+                outline:none;
+            }
+            a:hover{
+                background-color: green;
+            }
+            nav{
+                display: inline-block;
+                width:100%;
+                height:auto;
+                margin:auto;
+                background-color: #96b97d;
+                box-shadow:0 1px 1px #ccc;
+                border-radius:2px;
+            }
+            nav a{
+                display: block;
+                padding:18px 30px;
+                float:left;
+                color:#fff !important;
+                font-weight:bold;
+                font-size:20px;
+                text-decoration: none !important;
+                line-height:1;
+            }
+          
+        </style>
+    </head>
+    <body>
+        <div id="menu">
+            <p style="font-size:48px">website</p>
+            <nav v-bind:class="active" v-on:click>
+                <a href="#home" @click="makeActive('home')">HOME</a>
+                <a href="#source" @click="makeActive('source')">SOURCE</a>
+                <a href="#discussion"  @click="makeActive('discussion')">DISCUSSION</a>
+                <a href="#about" style="float:right" @click="makeActive('about')">ABOUT</a> 
+            </nav>
+            <p>You choosed <b>{{active}} menu</b></p>
+            <div id="home">
+                <img src="https://raw.githubusercontent.com/WindyZYY/myPicSource/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20190424203019.png">
+                <p>this is home menu</p>
+                <p>this is home menu</p>
+                <p>this is home menu</p>
+                <p>this is home menu</p>
+                <p>this is home menu</p>
+                <p>this is home menu</p>
+                <p>this is home menu</p>
+                <p>this is home menu</p>
+            </div>
+            <div id="source">
+                <img src="https://raw.githubusercontent.com/WindyZYY/myPicSource/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20190424203019.png">
+                <p>this is source menu</p>
+                <p>this is source menu</p>
+                <p>this is source menu</p>
+                <p>this is source menu</p>
+                <p>this is source menu</p>
+                <p>this is source menu</p>
+                <p>this is source menu</p>
+                <p>this is source menu</p>
+            </div>
+            <div id="discussion">
+                <img src="https://raw.githubusercontent.com/WindyZYY/myPicSource/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20190424203019.png">
+                <p>this is discussion menu</p>
+                <p>this is discussion menu</p>
+                <p>this is discussion menu</p>
+                <p>this is discussion menu</p>
+                <p>this is discussion menu</p>
+                <p>this is discussion menu</p>
+                <p>this is discussion menu</p>
+                <p>this is discussion menu</p>
+            </div>
+            <div id="about">
+                <img src="https://raw.githubusercontent.com/WindyZYY/myPicSource/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20190424203019.png">
+                <p>this is about menu</p>
+                <p>this is about menu</p>
+                <p>this is about menu</p>
+                <p>this is about menu</p>
+                <p>this is about menu</p>
+                <p>this is about menu</p>
+                <p>this is about menu</p>
+                <p>this is about menu</p>
+            </div>            
+        </div>
+        <script>
+            var menu=new Vue({
+                el:'#menu',
+                data:{
+                    active:'home'
+                },
+                methods:{
+                    makeActive:function(item){
+                        this.active=item;
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>
