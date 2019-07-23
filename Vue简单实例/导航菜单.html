@@ -18,6 +18,8 @@
             }
             nav{
                 display: inline-block;
+                top:0;
+                position:sticky;
                 width:100%;
                 height:auto;
                 margin:auto;
@@ -40,16 +42,17 @@
     </head>
     <body>
         <div id="menu">
-            <p style="font-size:48px">website</p>
-            <nav v-bind:class="active" v-on:click>
-                <a href="#home" @click="makeActive('home')">HOME</a>
-                <a href="#source" @click="makeActive('source')">SOURCE</a>
-                <a href="#discussion"  @click="makeActive('discussion')">DISCUSSION</a>
-                <a href="#about" style="float:right" @click="makeActive('about')">ABOUT</a> 
+            <p style="font-size:48px;">website</p>
+            <nav v-on:click>
+                <a href="#home" name="HOME" @click="makeActive('HOME')">HOME</a>
+                <a href="#source" name="SOURCE" @click="makeActive('SOURCE')">SOURCE</a>
+                <a href="#discussion" name="DISCUSSION" @click="makeActive('DISCUSSION')">DISCUSSION</a>
+                <a href="#about" name="ABOUT" style="float:right" @click="makeActive('ABOUT')">ABOUT</a> 
             </nav>
-            <p>You choosed <b>{{active}} menu</b></p>
+            <p style="font-size:32px">You choosed <b>{{active}}</b> menu</p>
             <div id="home">
                 <img src="https://raw.githubusercontent.com/WindyZYY/myPicSource/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20190424203019.png">
+                <p style="font-size:32px">You choosed <b>home</b> menu</p>
                 <p>this is home menu</p>
                 <p>this is home menu</p>
                 <p>this is home menu</p>
@@ -61,6 +64,7 @@
             </div>
             <div id="source">
                 <img src="https://raw.githubusercontent.com/WindyZYY/myPicSource/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20190424203019.png">
+                <p style="font-size:32px">You choosed <b>source</b> menu</p>
                 <p>this is source menu</p>
                 <p>this is source menu</p>
                 <p>this is source menu</p>
@@ -72,6 +76,7 @@
             </div>
             <div id="discussion">
                 <img src="https://raw.githubusercontent.com/WindyZYY/myPicSource/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20190424203019.png">
+                <p style="font-size:32px">You choosed <b>discussion</b> menu</p>               
                 <p>this is discussion menu</p>
                 <p>this is discussion menu</p>
                 <p>this is discussion menu</p>
@@ -83,6 +88,7 @@
             </div>
             <div id="about">
                 <img src="https://raw.githubusercontent.com/WindyZYY/myPicSource/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20190424203019.png">
+                <p style="font-size:32px">You choosed <b>about</b> menu</p> 
                 <p>this is about menu</p>
                 <p>this is about menu</p>
                 <p>this is about menu</p>
@@ -97,13 +103,15 @@
             var menu=new Vue({
                 el:'#menu',
                 data:{
-                    active:'home'
+                   active:'HOME',
                 },
                 methods:{
                     makeActive:function(item){
                         this.active=item;
+                        document.getElementsByName(item).style.backgroundColor=green;                       
                     }
-                }
+                },
+
             })
         </script>
     </body>
