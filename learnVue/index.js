@@ -1,3 +1,13 @@
+Vue.component('myCom',{
+    props:['comTest'],
+    template:'<h1>{{comTest}}</h1>'
+}),
+Vue.directive('focus',{
+    inserted:function(el){
+        el.focus()
+    }
+})
+
 var app=new Vue({
     el:"#app",
     data:{
@@ -25,7 +35,8 @@ var app=new Vue({
         m:0,
         all:false,
         selectedNames:[],
-        selectedSources:['A','B','C']
+        selectedSources:['A','B','C'],
+
     },
     filters:{
         capitalize:function(value){

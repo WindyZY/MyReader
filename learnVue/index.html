@@ -80,19 +80,24 @@
                 按键修饰符：<input v-on:keyup.enter="submit">enter键提交-->
 
             <!--v-model绑定表单元素。也有修饰符.lazy在change事件中同步\.number自动转为number类型\.trim自动过滤输入的首尾空格-->
-            <p>AllSelected:</p><input type="checkbox" id="AllSelected" v-model="all" @change="changeAllSelected()">
+            <span>AllSelected:</span><input type="checkbox" id="AllSelected" v-model="all" @change="changeAllSelected()">
             <label for="checkbox">
                 {{all}}
-            </label>
-            <p>Options</p>
-            <input type="checkbox" id="A" value="A" v-model="selectedNames">
+            </label><br>
+            <span>Options:</span><input type="checkbox" id="A" value="A" v-model="selectedNames">
             <label for="A">A</label>
             <input type="checkbox" id="B" value="B" v-model="selectedNames">
             <label for="B">B</label>
             <input type="checkbox" id="C" value="C" v-model="selectedNames">
             <label for="C">C</label>
             <br>
-            <span>Name Seleted:{{selectedNames}}</span>
+            <span>Name Seleted:{{selectedNames}}</span><br>
+
+            <!--组件：全局组件、局部组件、Prop-->
+            <myCom comTest="Create my component for test!"></myCom>
+            
+            <!--自定义指令-->
+            <input v-focus>
         </div>
 
         <script src="index.js"></script>
