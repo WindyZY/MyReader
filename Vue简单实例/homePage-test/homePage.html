@@ -10,7 +10,9 @@
                 position:sticky;
             }
             #logo{
-
+                display: block;
+                margin:auto;
+                width:40%;
             }
             #menu{
                 width:100%;
@@ -87,7 +89,7 @@
             <div id="content">
 
             </div>
-            <div id="bg_div" class="bg_shadow"></div>
+            <div id="bg_div" class="bg_shadow" @click="hideDiv()"></div>
             <div id="forSignIn" class="div_content" style="line-height:1;width:auto;height:auto;">
                 <div style="text-align:center;font-size:28px; line-height:20%;">
                     <p>登录</p>
@@ -131,8 +133,9 @@
                         bgDiv.style.width=document.body.scrollWidth;
                         $("#"+bg_div).height($(document).height());
                     },
-                    hideDiv:function(show_div){
-                        document.getElementById(show_div).style.display="none";
+                    hideDiv:function(){
+                        document.getElementById('forSignIn').style.display="none";
+                        document.getElementById('forSignUp').style.display="none";
                         document.getElementById('bg_div').style.display="none";
                     },
                     changeView:function(oldDiv,newDiv){
