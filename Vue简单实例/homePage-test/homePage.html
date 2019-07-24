@@ -4,11 +4,13 @@
     <head>
         <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
         <style>
-
             #header{
-                width:100%;
                 top:0;
+                margin:auto;
                 position:sticky;
+            }
+            #logo{
+
             }
             #menu{
                 width:100%;
@@ -39,17 +41,38 @@
             .div_content{
                 display: none;
                 position:absolute;
-                top:35%;left:30%;
-                border:5px solid rgb(80, 80, 248);
-                border-radius: 10px;
+                margin:auto;
+                padding: 10px 40px 20px;
+                border:3px solid rgb(80, 80, 248);
+                border-radius: 20px;
+                top:50%;left:50%;
+                -ms-transform: translate(-50%,-50%);
+                transform: translate(-50%,-50%);                
                 z-index:1002;
+            }
+            input[type=text], input[type=password],select{
+                padding:12px 20px;
+                margin:16px 0 0px;
+                display: inline-block;
+                border:1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+            .div_content button{
+                padding:5px 10px;
+                margin:8px 0;
+                width:100%;
+                border:1px ridge cornflowerblue;
+                border-radius: 4px;
+                background:cornflowerblue;
+                box-sizing: border-box;
             }
         </style>
     </head>
     <body>
         <div id="homePage">
             <div id="header">
-                <div style="text-align:center;width:20%">
+                <div id="logo" style="text-align:center;width:20%;">
                     <img src="logo.png" style="width:20%;height:20%;">
                     <span style="font-size:50px">易评</span>
                 </div>
@@ -65,31 +88,56 @@
 
             </div>
             <div id="bg_div" class="bg_shadow"></div>
-            <div id="forSignIn" class="div_content" style="width:40px;height:auto;">
-
-                    
+            <div id="forSignIn" class="div_content" style="line-height:1;width:auto;height:auto;">
+                <div style="text-align:center;font-size:28px; line-height:20%;">
+                    <p>登录</p>
+                    <p style="font-family:monospace;font-style:italic;">Sign In</p> 
+                </div>
+                <input type="text" name="user_id" placeholder="用户名/邮箱"><br>
+                <input type="password" name="pwd" placeholder="密码"><br><br>
+                <input type="checkbox" id="remInfo" v-model="remember">
+                <label for="remInfo">记住密码</label>
+                <label for="autoSignIn" style="float:right;">自动登录</label>
+                <input type="checkbox" id="autoSignIn" v-model="autoS" style="float:right;"><br>
+                <button style="font-size:24px;font-weight: ">登录</button><br><br>
+                <span style="float: left;color:blue;font-weight:800;" @click="changeView('forSignIn','forSignUp')">新用户注册</span>
+                <span style="float: right;color:rgb(161, 159, 159)">忘记密码</span>
             </div>
             <div id="forSignUp" class="div_content">
-
+                <div style="text-align:center;font-size:28px; line-height:20%;">
+                    <p>注册</p>
+                    <p style="font-family:monospace;font-style:italic;">Sign Up</p> 
+                </div>
+                <input type="text" name="user_name" placeholder="用户名"><br>
+                <input type="password" name="pwd" placeholder="密码"><br>
+                <input type="password" name="ensurePwd" placeholder="确认密码"><br>
+                <input type="text" name="emailAdd" placeholder="邮箱地址"><br><br>
+                <span style="float: left;color:blue;font-size:20px;font-weight:800;" @click="changeView('forSignUp','forSignIn')">直接登录</span>
+                <span><button style="width:40%;margin:0;float: right;">注册</button></span>
             </div>
         </div>
         <script>
             var homePage=new Vue({
                 el:"#homePage",
                 data:{
-
+                    remember:false,
+                    autoS:false,
                 },
                 methods:{
                     showDiv:function(show_div){
                         document.getElementById(show_div).style.display='block';
                         document.getElementById('bg_div').style.display='block';
-                        var bgDiv=document.getElementById(bg_div);
+                        var bgDiv=document.getElementById('bg_div');
                         bgDiv.style.width=document.body.scrollWidth;
                         $("#"+bg_div).height($(document).height());
                     },
                     hideDiv:function(show_div){
                         document.getElementById(show_div).style.display="none";
                         document.getElementById('bg_div').style.display="none";
+                    },
+                    changeView:function(oldDiv,newDiv){
+                        document.getElementById(oldDiv).style.display="none";
+                        document.getElementById(newDiv).style.display="block";
                     }
                 }
             })
