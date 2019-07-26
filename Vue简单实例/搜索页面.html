@@ -4,15 +4,20 @@
     <head>
         <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
         <style>
-
+            
         </style>
     </head>
     <body>
         <div id="search" v-cloak>
             <div class="bar">
-                <input type="text" v-model="searchString",placeholder="输入搜索内容"/>
-                
+                <input type="text" v-model="searchString",placeholder="输入搜索内容"/>                
             </div>
+            <ul>
+                <li v-for="article in filteredarticles">
+                    <a v-bind:href="article.url"><img v-bind:src="article.image"></a>
+                    <p>{{article.title}}</p>
+                </li>
+            </ul>
         </div>
         <script>
             var app=new Vue({
@@ -53,7 +58,25 @@
                     ]
                 },
                 computed:{
+                    filteredarticles:function(){
+                        var articleArr=this.articles,
+                            searchString=this.searchString;
 
+                        if(!searchString){
+                            return articleArr;
+                        }
+
+                        searchString=searchString.trim().toLowerCase();
+
+                        //JS数组的filter函数对数组进行检测筛选。
+                        articleArr=articleArr.filter(function(item){
+                            if(item.title.toLowerCase().indexOf(searchString)!==-1){
+                                return item;//如果title中含有searchString就返回。
+                            }
+                        })
+
+                        return articleArr;
+                    }
                 }
             })
         </script>
