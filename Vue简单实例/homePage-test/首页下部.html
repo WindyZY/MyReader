@@ -2,26 +2,20 @@
 <html>
     <head>
         <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+        
         <style>
             *{
                 text-align: center;
             }
-            /* Create two columns that float next to eachother */
-            .column {
-                float: left;
-                width: 50%;
-                margin-top: 6px;
-                padding: 20px;
+            
+            .row{
+                -webkit-column-count: 2; /* Chrome, Safari, Opera */
+                -moz-column-count: 2; /* Firefox */
+                column-count: 2;
+                padding:20px;
             }
-
-            /* Clear floats after the columns */
-            .row:after {
-                content: "";
-                display: table;
-                clear: both;
-            }
-            input[type=text], select, textarea {
-                width: 100%;
+            input[type=text], textarea {
+                width:100%;
                 padding: 12px;
                 border: 1px solid #ccc;
                 margin-top: 6px;
@@ -55,11 +49,11 @@
                 <h4>Contact With Us</h4><br>
                 <p>请填写信息:</p>
                 <div class="row">
-                    <div class="column">
-                        <img style=" width:100%;height:500px" src="https://raw.githubusercontent.com/WindyZYY/myPicSource/master/timg.jpg">
+                    <div>
+                        <img style=" height:500px" src="https://raw.githubusercontent.com/WindyZYY/myPicSource/master/timg.jpg">
                     </div>
-                    <div class="column">
-                        <form>
+                    <div>
+                        <form style="text-align: left;">
                             <label for="bug">问题反馈</label>
                             <input type="text" id="Bug" placeholder="请描述你的问题">
                             <label for="phone">联系邮箱</label>
