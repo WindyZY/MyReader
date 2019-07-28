@@ -37,8 +37,8 @@ var app=new Vue({
     },
     computed:{
         filteredArticles:function(){
-            var articleArr=this.articles,
-                searchString=this.searchString;
+            var articleArr=this.articles;
+            var searchString=this.searchString;
 
             if(!searchString){
                 return articleArr;
@@ -48,7 +48,7 @@ var app=new Vue({
 
             //JS数组的filter函数对数组进行检测筛选。
             articleArr=articleArr.filter(function(item){
-                if(item.title.toLowerCase().indexOf(searchString)!==-1){
+                if(item.title.toLowerCase().indexOf(searchString)!=-1){
                     return item;//如果title中含有searchString就返回。
                 }
             })
