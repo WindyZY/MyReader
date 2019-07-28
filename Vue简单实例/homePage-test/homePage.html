@@ -82,8 +82,8 @@
                     <a href="#">首页</a>
                     <a href="#">步骤指引</a>
                     <a href="#">联系我们</a>
-                    <a style="float: right" @click="showDiv('forSignUp')">注册</a>
-                    <a style="float: right" @click="showDiv('forSignIn')">登录</a>                    
+                    <a style="float: right; cursor:pointer;" @click="showDiv('forSignUp')">注册</a>
+                    <a style="float: right; cursor:pointer;" @click="showDiv('forSignIn')">登录</a>                    
                 </div>
             </div>
             <div id="content">
@@ -102,8 +102,8 @@
                 <label for="autoSignIn" style="float:right;">自动登录</label>
                 <input type="checkbox" id="autoSignIn" v-model="autoS" style="float:right;"><br>
                 <button style="font-size:24px;font-weight: ">登录</button><br><br>
-                <span style="float: left;color:blue;font-weight:800;" @click="changeView('forSignIn','forSignUp')">新用户注册</span>
-                <span style="float: right;color:rgb(161, 159, 159)">忘记密码</span>
+                <span style="float: left;color:blue;font-weight:800;cursor:pointer;" @click="changeView('forSignIn','forSignUp')">新用户注册</span>
+                <span style="float: right;color:rgb(161, 159, 159);cursor:pointer;">忘记密码</span>
             </div>
             <div id="forSignUp" class="div_content">
                 <div style="text-align:center;font-size:28px; line-height:20%;">
@@ -114,7 +114,7 @@
                 <input type="password" name="pwd" placeholder="密码"><br>
                 <input type="password" name="ensurePwd" placeholder="确认密码"><br>
                 <input type="text" name="emailAdd" placeholder="邮箱地址"><br><br>
-                <span style="float: left;color:blue;font-size:20px;font-weight:800;" @click="changeView('forSignUp','forSignIn')">直接登录</span>
+                <span style="float: left;color:blue;font-size:20px;font-weight:800;cursor:pointer;" @click="changeView('forSignUp','forSignIn')">直接登录</span>
                 <span><button style="width:40%;margin:0;float: right;">注册</button></span>
             </div>
         </div>
