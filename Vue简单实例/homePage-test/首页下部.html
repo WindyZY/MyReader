@@ -4,19 +4,22 @@
         <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
         
         <style>
-            *{
-                text-align: center;
-            }
-            
             .row{
                 -webkit-column-count: 2; /* Chrome, Safari, Opera */
                 -moz-column-count: 2; /* Firefox */
                 column-count: 2;
                 padding:20px;
             }
+            #bugForm{
+                border:3px solid cornflowerblue;
+                border-radius:10px;
+                padding:30px;
+                font-size:20px;
+            }
             input[type=text], textarea {
-                width:100%;
-                padding: 12px;
+                width:90%;
+                height:40px;
+                padding: 8px;
                 border: 1px solid #ccc;
                 margin-top: 6px;
                 margin-bottom: 16px;
@@ -24,7 +27,7 @@
             }
 
             input[type=submit] {
-                background-color: #4CAF50;
+                background-color: rgb(128, 167, 240);
                 color: white;
                 padding: 12px 20px;
                 border: none;
@@ -32,7 +35,7 @@
             }
 
             input[type=submit]:hover {
-                background-color: #45a049;
+                background-color:cornflowerblue;
             }
         </style>
     </head>
@@ -42,22 +45,24 @@
 
             </div>
             <div id="steps">
-
+                
             </div>
             <div id="contact">
-                <h2>联系我们</h2>
-                <h4>Contact With Us</h4><br>
-                <p>请填写信息:</p>
                 <div class="row">
                     <div>
-                        <img style=" height:500px" src="https://raw.githubusercontent.com/WindyZYY/myPicSource/master/timg.jpg">
+                        <img style=" height:520px;text-indent: 20px;" src="https://raw.githubusercontent.com/WindyZYY/myPicSource/master/timg.jpg">
                     </div>
-                    <div>
-                        <form style="text-align: left;">
-                            <label for="bug">问题反馈</label>
-                            <input type="text" id="Bug" placeholder="请描述你的问题">
-                            <label for="phone">联系邮箱</label>
-                            <input type="text" id="mailbox" placeholder="请输入你的邮箱">
+                    <div id="bugForm">
+                        <div style="text-align: center;line-height: 1;">
+                            <h2>联系我们</h2>
+                            <h4>Contact With Us</h4>
+                            <p style="font-weight: bold;">请填写信息:</p> <br>
+                        </div>
+                        <form>
+                            <label for="bug">问题反馈</label><br>
+                            <input type="text" id="Bug" placeholder="请描述你的问题"><br>
+                            <label for="phone">联系邮箱</label><br>
+                            <input type="text" id="mailbox" placeholder="请输入你的邮箱"><br>
                             <input type="submit" value="提交">
                         </form>
                     </div>
