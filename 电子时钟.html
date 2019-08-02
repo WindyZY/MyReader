@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>简易电子时钟</title>
+    <style>
+        .box1{
+            border: 1px solid grey;
+            width:auto;
+            height:auto;
+            font-size:72px;
+            color:red;
+            text-align:center;
+            float:left;
+        }
+        .box2{
+            color:red;
+            font-size:60px;
+            float:left;
+        }
+    </style>
+    <script>
+        setInterval(function(){
+        var hour=document.getElementById("h");
+        var minute=document.getElementById("m");
+        var second=document.getElementById("s");
+        
+        var date=new Date();
+        var h=date.getHours();
+        var m=date.getMinutes();
+        var s=date.getSeconds();
+        
+        hour.innerHTML=h;
+        minute.innerHTML=m;
+        second.innerHTML=s;
+        },1000);
+
+    </script>
+</head> 
+<body>
+    <div id="clock">
+        <div class="box1" id="h"></div>
+        <div class="box2"> : </div>
+        <div class="box1" id="m"></div>
+        <div class="box2"> : </div>
+        <div class="box1" id="s"></div>
+    </div>
+</body>   
+</html>
+
